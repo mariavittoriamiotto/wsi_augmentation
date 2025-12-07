@@ -7,11 +7,11 @@ import torch
 from torchvision.transforms.transforms import Compose
 import albumentations as A 
 from albumentations import ElasticTransform
-from hsbcoloraugmenter import HsbColorAugmenter
-from hedcoloraugmenter import HedColorAugmenter
-from gaussianbluraugmenter import GaussianBlurAugmenter
-from additiveguassiannoiseaugmenter import AdditiveGaussianNoiseAugmenter
-from scalingaugmenter import ScalingAugmenter
+from dada.train.augmenters.color.hsbcoloraugmenter import HsbColorAugmenter
+from dada.train.augmenters.color.hedcoloraugmenter import HedColorAugmenter
+from dada.train.augmenters.noise.gaussianbluraugmenter import GaussianBlurAugmenter
+from dada.train.augmenters.noise.additiveguassiannoiseaugmenter import AdditiveGaussianNoiseAugmenter
+from dada.train.augmenters.spatial.scalingaugmenter import ScalingAugmenter
 
 PARAMETER_MAX = 10
 random_mirror = True
