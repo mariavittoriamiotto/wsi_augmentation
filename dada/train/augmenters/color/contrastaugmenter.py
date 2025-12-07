@@ -4,8 +4,21 @@ This file contains a class for augmenting patches from whole slide images with c
 
 from . import coloraugmenterbase as dptcoloraugmenterbase
 
-from ...errors import augmentationerrors as dptaugmentationerrors
+#from ...errors import augmentationerrors as dptaugmentationerrors
+# Nel file gaussianbluraugmenter.py:
 
+# NEUTRALIZZAZIONE DELL'ERRORE:
+class DPTAugmentationError(Exception):
+    """Classe fittizia per le eccezioni."""
+    pass
+
+class dptaugmentationerrors:
+    DPTAugmentationError = DPTAugmentationError
+
+# Commenta la riga rotta per evitare l'errore:
+# # from ...errors import augmentationerrors as dptaugmentationerrors 
+
+import scipy.ndimage.filters
 import skimage.exposure
 import skimage.color
 import numpy as np
