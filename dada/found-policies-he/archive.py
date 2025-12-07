@@ -5,7 +5,7 @@ from __future__ import print_function
 
 from collections import defaultdict
 
-from train.augmentations import get_augment, augment_list
+from .train.augmentations import get_augment, augment_list
 
 
 

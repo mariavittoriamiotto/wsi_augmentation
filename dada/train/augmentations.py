@@ -7,11 +7,11 @@ import numpy as np
 import torch
 from torchvision.transforms.transforms import Compose
 from PIL import ImageOps, ImageEnhance, ImageFilter, Image
-from augmenters.color.hsbcoloraugmenter import HsbColorAugmenter
-from augmenters.color.hedcoloraugmenter import HedColorAugmenter
-from augmenters.noise.gaussianbluraugmenter import GaussianBlurAugmenter
-from augmenters.noise.additiveguassiannoiseaugmenter import AdditiveGaussianNoiseAugmenter
-from albumentations.augmentations.geometric.functional import elastic_transform
+from .augmenters.color.hsbcoloraugmenter import HsbColorAugmenter
+from .augmenters.color.hedcoloraugmenter import HedColorAugmenter
+from .augmenters.noise.gaussianbluraugmenter import GaussianBlurAugmenter
+from .augmenters.noise.additiveguassiannoiseaugmenter import AdditiveGaussianNoiseAugmenter
+from .albumentations.augmentations.geometric.functional import elastic_transform
 from augmenters.spatial.scalingaugmenter import ScalingAugmenter
 random_mirror = True
 
