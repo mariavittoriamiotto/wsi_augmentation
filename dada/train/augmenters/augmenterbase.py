@@ -2,8 +2,14 @@
 This file contains base class for augmenting patches from whole slide images.
 """
 
-from ..errors import augmentationerrors as dptaugmentationerrors
+#from ..errors import augmentationerrors as dptaugmentationerrors
+class DPTAugmentationError(Exception):
+    """Classe fittizia per evitare NameError."""
+    pass 
 
+# E assegna il nome richiesto:
+class dptaugmentationerrors:
+    DPTAugmentationError = DPTAugmentationError
 #----------------------------------------------------------------------------------------------------
 
 class AugmenterBase(object):
