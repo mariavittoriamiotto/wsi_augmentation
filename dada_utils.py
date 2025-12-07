@@ -5,7 +5,7 @@ from PIL import ImageOps, ImageEnhance, ImageFilter, Image
 from collections import defaultdict
 import torch
 from torchvision.transforms.transforms import Compose
-from albumentations.augmentations.geometric.functional import elastic_transform
+from albumentations.augmentations.functional import elastic_transform
 from hsbcoloraugmenter import HsbColorAugmenter
 from hedcoloraugmenter import HedColorAugmenter
 from gaussianbluraugmenter import GaussianBlurAugmenter
