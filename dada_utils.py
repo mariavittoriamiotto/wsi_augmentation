@@ -5,7 +5,8 @@ from PIL import ImageOps, ImageEnhance, ImageFilter, Image
 from collections import defaultdict
 import torch
 from torchvision.transforms.transforms import Compose
-from albumentations.augmentations.functional import elastic_transform
+import albumentations as A 
+from albumentations import ElasticTransform
 from hsbcoloraugmenter import HsbColorAugmenter
 from hedcoloraugmenter import HedColorAugmenter
 from gaussianbluraugmenter import GaussianBlurAugmenter
@@ -31,9 +32,17 @@ def _gauss_noise(image, factor):
   return augmentor.transform(image)#(augmentor.transform(image),[1,2,0])
 
 def _elastic(image, factor):
-  """Equivalent of PIL Gaussian noise."""
-  image=elastic_transform(image,alpha=factor, sigma=factor, alpha_affine=factor)
-  return image
+    # Invece di chiamare una funzione, usiamo la classe (come ci si aspetta in Albumentations v0.4.x)
+    # Questo è un esempio; il codice deve adattarsi ESATTAMENTE alla logica DADA
+
+    # Esempio di applicazione di una classe:
+    transform = ElasticTransform(
+        alpha=factor, 
+        sigma=factor * 0.1,  # Parametri adattati al factor DADA
+        alpha_affine=factor * 0.1,
+        p=1.0)
+
+    return transform(image=image)['image']
 
 def _scaling(image,factor):
     augmentor = ScalingAugmenter(scaling_range=(1-factor, 1+factor), interpolation_order=1)
