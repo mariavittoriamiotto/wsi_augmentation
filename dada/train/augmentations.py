@@ -7,12 +7,12 @@ import numpy as np
 import torch
 from torchvision.transforms.transforms import Compose
 from PIL import ImageOps, ImageEnhance, ImageFilter, Image
-from .augmenters.color.hsbcoloraugmenter import HsbColorAugmenter
-from .augmenters.color.hedcoloraugmenter import HedColorAugmenter
-from .augmenters.noise.gaussianbluraugmenter import GaussianBlurAugmenter
-from .augmenters.noise.additiveguassiannoiseaugmenter import AdditiveGaussianNoiseAugmenter
-from .albumentations.augmentations.geometric.functional import elastic_transform
-from augmenters.spatial.scalingaugmenter import ScalingAugmenter
+from hsbcoloraugmenter import HsbColorAugmenter
+from hedcoloraugmenter import HedColorAugmenter
+from gaussianbluraugmenter import GaussianBlurAugmenter
+from additiveguassiannoiseaugmenter import AdditiveGaussianNoiseAugmenter
+from scalingaugmenter import ScalingAugmenter
+#from .albumentations.augmentations.geometric.functional import elastic_transform
 random_mirror = True
 
 def _gauss_blur(image, factor):
